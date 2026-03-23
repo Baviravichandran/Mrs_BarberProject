@@ -1,34 +1,24 @@
-import { useState } from 'react'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './Pages/Home'
+import About from './Pages/About'
+import Contact from './Pages/Contact'
+import Services from './Pages/Services'
 import './App.css'
-import Navbar from "./components/Navbar/Navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App(){
-  const [count, setCount] = useState(0)
-
-const App = () => { 
+function App() {
   return (
-    <>
-
     <BrowserRouter>
-    <Navbar/>
       <Routes>
-          <Routes path="/"
-           elemant={<Home/>}/>
-          
-          <Routes path="/about"
-           elemant={<About/>}/>
-
-          <Routes path="/services"
-           elemant={<Services/>}/>
-
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/services' element={<Services />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
     </BrowserRouter>
-    
-    
-    </>
   )
 }
 
-
-} 
 export default App
